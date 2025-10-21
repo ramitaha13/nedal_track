@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Truck, Search, DollarSign, Wrench } from "lucide-react";
+import { Truck, Search, DollarSign } from "lucide-react";
 
 const HeavyEquipmentCatalog = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -258,84 +258,9 @@ const HeavyEquipmentCatalog = () => {
 
               {/* Content */}
               <div className="p-4 sm:p-6">
-                <p className="text-sm sm:text-base text-gray-700 mb-3 sm:mb-4 font-medium">
+                <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6 font-medium">
                   {item.description}
                 </p>
-
-                {/* Work Types */}
-                <div className="mb-3 sm:mb-4">
-                  <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                    <Wrench className="w-4 h-4 sm:w-5 sm:h-5 text-orange-600" />
-                    <h3 className="text-sm sm:text-base font-bold text-gray-900">
-                      סוגי עבודות:
-                    </h3>
-                  </div>
-                  <ul className="space-y-1.5 sm:space-y-2">
-                    {item.works.map((work, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-start gap-2 text-xs sm:text-sm text-gray-700"
-                      >
-                        <span className="text-orange-500 mt-0.5 sm:mt-1">
-                          •
-                        </span>
-                        <span>{work}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Sizes */}
-                <div className="mb-3 sm:mb-4 bg-gray-50 p-2.5 sm:p-3 rounded-lg">
-                  <h3 className="text-sm sm:text-base font-bold text-gray-900 mb-2">
-                    גדלים זמינים:
-                  </h3>
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                    {item.sizes.map((size, idx) => (
-                      <span
-                        key={idx}
-                        className="bg-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm text-gray-700 border border-gray-200"
-                      >
-                        {size}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Specifications */}
-                <div className="mb-3 sm:mb-4 bg-blue-50 p-2.5 sm:p-3 rounded-lg">
-                  <h3 className="text-sm sm:text-base font-bold text-gray-900 mb-2">
-                    מפרט טכני:
-                  </h3>
-                  <div className="grid grid-cols-2 gap-2 text-xs sm:text-sm">
-                    {Object.entries(item.specifications).map(([key, value]) => (
-                      <div key={key} className="flex flex-col">
-                        <span className="text-gray-600 text-xs">
-                          {key === "reach"
-                            ? "טווח הגעה"
-                            : key === "depth"
-                            ? "עומק חפירה"
-                            : key === "bucketCapacity"
-                            ? "נפח דלי"
-                            : key === "bladeWidth"
-                            ? "רוחב להב"
-                            : key === "speed"
-                            ? "מהירות"
-                            : key === "bladeLength"
-                            ? "אורך להב"
-                            : key === "precision"
-                            ? "דיוק"
-                            : key === "workWidth"
-                            ? "רוחב עבודה"
-                            : key}
-                        </span>
-                        <span className="font-semibold text-gray-900 text-xs sm:text-sm">
-                          {value}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
 
                 {/* Pricing */}
                 <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-3 sm:p-4 rounded-lg border-2 border-green-200">
